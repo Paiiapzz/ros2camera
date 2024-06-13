@@ -222,15 +222,15 @@ class YolopTRT(object):
                 if lane_detected:
                     # Determine steering recommendation based on the deviation
                     if deviation > -160:
-                        # Deviation is less negative than -160, meaning it's to the right of the desired band
-                        steering_recommendation = "Steer Left"
-                        deviations.append(deviation)
-                    elif deviation < -200:
-                        # Deviation is more negative than -200, meaning it's to the left of the desired band
+                        
                         steering_recommendation = "Steer Right"
                         deviations.append(deviation)
+                    elif deviation < -200:
+                        
+                        steering_recommendation = "Steer Left"
+                        deviations.append(deviation)
                     else:
-                        # Deviation is within the acceptable range (-160 to -200)
+                        
                         steering_recommendation = "Stay Straight"
                         deviations.append(deviation)
                 else:
